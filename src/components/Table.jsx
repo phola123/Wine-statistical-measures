@@ -34,7 +34,7 @@ const Table = ({title, calculationByKey, data}) => {
 
 
     // using divs instead of tables for better readability
-    return <div className="table">
+    return calculatedData ? <div className="table">
 
         <h2>{title} Table</h2>
 
@@ -60,59 +60,56 @@ const Table = ({title, calculationByKey, data}) => {
 
             {/*table row*/}
             {/*Mean*/}
-            {
-                calculatedData ? <div className='table__bodyRow'>
-                    {/*table cell*/}
-                    <div className='table__bodyItem'>{`${title} Mean`}</div>
 
-                    {/*table cell*/}
-                    {
-                        calculatedData.map((value, index) => <div key={index}
-                                                                  className='table__bodyItem'>{value.mean}</div>)
-                    }
+            <div className='table__bodyRow'>
+                {/*table cell*/}
+                <div className='table__bodyItem'>{`${title} Mean`}</div>
+
+                {/*table cell*/}
+                {
+                    calculatedData.map((value, index) => <div key={index}
+                                                              className='table__bodyItem'>{value.mean}</div>)
+                }
 
 
-                </div> : <></>
-            }
+            </div>
+
 
             {/*table row*/}
             {/*Median*/}
-            {
-                calculatedData ? <div className='table__bodyRow'>
-                    {/*table cell*/}
-                    <div className='table__bodyItem'>{`${title} Median`}</div>
+            <div className='table__bodyRow'>
+                {/*table cell*/}
+                <div className='table__bodyItem'>{`${title} Median`}</div>
 
-                    {/*table cell*/}
-                    {
-                        calculatedData.map((value, index) => <div key={index}
-                                                                  className='table__bodyItem'>{value.median}</div>)
-                    }
+                {/*table cell*/}
+                {
+                    calculatedData.map((value, index) => <div key={index}
+                                                              className='table__bodyItem'>{value.median}</div>)
+                }
 
 
-                </div> : <></>
-            }
+            </div>
+
 
             {/*table row*/}
             {/*Mode*/}
-            {
-                calculatedData ? <div className='table__bodyRow'>
-                    {/*table cell*/}
-                    <div className='table__bodyItem'>{`${title} Mode`}</div>
+            <div className='table__bodyRow'>
+                {/*table cell*/}
+                <div className='table__bodyItem'>{`${title} Mode`}</div>
 
-                    {/*table cell*/}
-                    {
-                        calculatedData.map((value, index) => <div key={index}
-                                                                  className='table__bodyItem'>{value.mode}</div>)
-                    }
+                {/*table cell*/}
+                {
+                    calculatedData.map((value, index) => <div key={index}
+                                                              className='table__bodyItem'>{value.mode}</div>)
+                }
 
 
-                </div> : <></>
-            }
+            </div>
 
         </div>
 
 
-    </div>
+    </div> : <></>
 
 
 }
