@@ -8,7 +8,7 @@
 export const calculateMean = (array, key) => {
     // Mean = sum of values / no. of values.
 
-    // added parse float to cover string values which are in the array
+    // added parse float to cover string values which are in the array assuming no values are null
     const dataArray = array.map(item => parseFloat(item[key]));
 
     // valHolder = holds value for each function call
@@ -26,7 +26,7 @@ export const calculateMedian = (array, key) => {
     //median of odd values =  ( (n + 1) / 2 ) term
     //n = number of values
 
-    // added parse float to cover string values which are in the array
+    // added parse float to cover string values which are in the array assuming no values are null and sorting in to get median
     const dataArray = array.map(item => parseFloat(item[key])).sort();
     const numberOfValues = dataArray.length;
 
@@ -48,7 +48,7 @@ export const calculateMode = (array, key) => {
 
     //mode = number occuring most time
 
-    // added parse float to cover string values which are in the array
+    // added parse float to cover string values which are in the array assuming no values are null
     const dataArray = array.map(item => parseFloat(item[key]));
 
     // to get most occurrence of single value
