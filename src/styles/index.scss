@@ -1,0 +1,28 @@
+//font imports
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+// basic normalisation
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 300;
+  font-family: 'Poppins', sans-serif;;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.application-container {
+  max-width: 1366px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+//components
+@import "components/table";
+

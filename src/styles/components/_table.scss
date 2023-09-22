@@ -1,0 +1,40 @@
+//Table styles (using flex box)
+//BEM model for writing Styles
+
+.table {
+
+  margin: 20px;
+
+  &__headerRow, &__bodyRow {
+
+    display: flex;
+
+    &:last-child {
+
+      .table__bodyItem {
+        border-bottom: 2px solid black;
+      }
+    }
+
+  }
+
+  &__headerItem, &__bodyItem {
+    padding: 10px;
+    border: 2px solid black;
+    border-right: 0;
+    border-bottom: 0;
+    max-width: 120px;
+    width: 100%;
+    text-align: center;
+
+
+    &:last-child {
+      border-right: 2px solid black;
+    }
+
+
+  }
+
+
+}
+
