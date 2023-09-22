@@ -59,9 +59,9 @@ export const calculateMode = (array, key) => {
 
 
     let firstMode;
-    let highestNumber = 0;
+    let secondMode;
 
-    let SecondMode;
+    let highestNumber = 0;
 
     // map the keys to get the largest length of array in groupBy
     keyOfModeArray.map(key => {
@@ -75,7 +75,7 @@ export const calculateMode = (array, key) => {
     keyOfModeArray.map(key => {
         //  if highestNumber is find and key is not equal to first mode we loop through
         if (modeObject[key].length === highestNumber && key !== firstMode) {
-            SecondMode = key;
+            secondMode = key;
         }
     });
 
@@ -83,8 +83,8 @@ export const calculateMode = (array, key) => {
     if (highestNumber === 1) {
         return 'No mode found';
     } else {
-        if (SecondMode) {
-            return `${parseFloat(firstMode).toFixed(3)} & ${parseFloat(SecondMode).toFixed(3)}`;
+        if (secondMode) {
+            return `${parseFloat(firstMode).toFixed(3)} & ${parseFloat(secondMode).toFixed(3)}`;
         } else {
             return parseFloat(firstMode).toFixed(3);
         }
