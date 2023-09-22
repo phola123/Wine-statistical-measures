@@ -4,6 +4,8 @@ import Table from "../components/Table";
 
 // Constants imports
 import {DATA} from "../constants/data";
+
+// Helper functions
 import {calculateGamma} from "../utils/helpers";
 
 
