@@ -58,36 +58,28 @@ export const calculateMode = (array, key) => {
     const keyOfModeArray = Object.keys(modeObject);
 
 
-    let firstMode;
-    let secondMode;
+    //array for mode,bimodal, trimodal, multimodal
+    let arrayOfModes = []
 
+    // highest length
     let highestNumber = 0;
 
     // map the keys to get the largest length of array in groupBy
     keyOfModeArray.map(key => {
         if (modeObject[key].length > highestNumber) {
             highestNumber = modeObject[key].length
-            firstMode = key;
+            arrayOfModes = [key];
+        } else if (modeObject[key].length === highestNumber) {
+            arrayOfModes.push(key);
         }
     });
 
-    // looped again to check if it contains two modes
-    keyOfModeArray.map(key => {
-        //  if highestNumber is find and key is not equal to first mode we loop through
-        if (modeObject[key].length === highestNumber && key !== firstMode) {
-            secondMode = key;
-        }
-    });
 
     // if highest number is 1 i.e all numbers occur 1 time only then we return no mode found;
     if (highestNumber === 1) {
         return 'No mode found';
     } else {
-        if (secondMode) {
-            return `${parseFloat(firstMode).toFixed(3)} & ${parseFloat(secondMode).toFixed(3)}`;
-        } else {
-            return parseFloat(firstMode).toFixed(3);
-        }
+        return arrayOfModes.map(mode => `${parseFloat(mode).toFixed(3)}`).join(', ')
     }
 }
 
