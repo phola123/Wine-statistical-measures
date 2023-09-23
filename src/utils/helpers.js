@@ -13,10 +13,10 @@ export const calculateMean = (array, key) => {
 
     // valHolder = holds value for each function call
     // currentVal = current value in array
-    return dataArray.reduce((valHolder, currentVal) => {
+    return ((dataArray.reduce((valHolder, currentVal) => {
         return valHolder + currentVal;
         // 0 is passed here as initial value for valHolder
-    }, 0).toFixed(3);
+    }, 0)) / dataArray.length).toFixed(3);
 
 }
 
@@ -86,5 +86,5 @@ export const calculateMode = (array, key) => {
 
 // function to calculate and return gamma by using parameters needed
 export const calculateGamma = (ash, hue, magnesium) => {
-    return parseFloat(((ash * hue) / magnesium).toFixed(3))
+    return ((ash * hue) / magnesium).toFixed(3)
 }
